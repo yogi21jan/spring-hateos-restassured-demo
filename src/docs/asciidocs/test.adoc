@@ -1,0 +1,82 @@
+= Home Service API Documentation
+:author: Yogendra Sahoo
+:email: YOGENDRA.SAHOO@ext.ec.europa.eu
+:appversion: 1.0.0
+:doctype: book
+:compat-mode:
+:page-layout!:
+:toc: left
+:toclevels: 3
+:sectanchors:
+:sectlinks:
+:sectnums:
+:linkattrs:
+:source-highlighter: highlightjs
+
+
+[[overview]]
+= Overview
+This document is for showing usage of Spring rest docs.
+
+[[overview-general]]
+== General
+
+[[overview-http-verbs]]
+=== HTTP verbs
+
+*Supported Request Types*
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource
+
+| `PUT`
+| Used to update an existing resource
+
+| `DELETE`
+| Used to delete an existing resource
+|===
+
+*Supported HTTP Status Types*
+
+|===
+| HTTP Status | Usage
+
+| `200 OK`
+| Request is succed.GET an entity corresponding to the requested resource is sent in the response
+
+| `400 Bad Request`
+| The request could not be understood by the server due to malformed syntax. The client SHOULD NOT repeat the request without modifications
+
+| `412 Precondition Failed`
+| This response code allows the client to place preconditions on the current resource meta-information and thus prevent the requested method from being applied to a resource other than the one intended
+
+| `500 Internal Server Error`
+| The server encountered an unexpected condition which prevented it from fulfilling the request
+|===
+
+[[overview-http-requests]]
+== Requests
+
+=== Home requst
+*GET* request for showing greeting message.
+
+==== Service URL
+include::{snippets}/home/curl-request.adoc[]
+
+==== Request parameters
+include::{snippets}/home/path-parameters.adoc[]
+ 
+==== Response fields
+include::{snippets}/home/response-body.adoc[]
+
+==== Example Request for showing greeting message.
+include::{snippets}/home/http-request.adoc[]
+
+==== Example Response for showing greeting message.
+include::{snippets}/home/http-response.adoc[]

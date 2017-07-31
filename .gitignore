@@ -1,0 +1,9 @@
+**/target
+**/compile-reports/**
+*.classpath
+*.project
+*.prefs
+*.settings
+*.jasper
+build-indigo.sh
+**.orig
