@@ -15,14 +15,16 @@ import com.wyn.domain.Greeting;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.RequiredArgsConstructor;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/product")
 @Api(value="GreetingController REST API")
 public class GreetingController {
 
     private static final String TEMPLATE = "Hello, %s!";
-
+    
     @GetMapping("/yogi/greeting")
     @ApiOperation(value = "Hateoas example: Shows content along with links")
     public HttpEntity<Greeting> greeting(
@@ -33,4 +35,5 @@ public class GreetingController {
 
         return new ResponseEntity<Greeting>(greeting, HttpStatus.OK);
     }
+   
 }

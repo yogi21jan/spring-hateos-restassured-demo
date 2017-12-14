@@ -29,7 +29,7 @@ public class AlbumController {
 	
 	@Autowired
 	private MusicService musicService;
-
+	
 	@GetMapping(value = "/yogi/albums", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	@ApiOperation(value = "Lists all Albums")
