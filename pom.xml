@@ -16,7 +16,7 @@
 		<java.version>1.8</java.version>
 		<snippetsDirectory>${project.build.directory}/generated-snippets</snippetsDirectory>
 		<rest-assured.version>3.0.6</rest-assured.version>
-		<swagger.version>2.6.1</swagger.version>
+		<swagger.version>2.7.0</swagger.version>
 		<spring.restdocs.version>2.0.0.RELEASE</spring.restdocs.version>
 	</properties>
 
