@@ -50,29 +50,44 @@ public class BookController {
 		Book book = bookRepository.findOne(Integer.valueOf(id));
 		Resource<Book> resource = new Resource<Book>(book);
 		resource.add(linkTo(methodOn(BookController.class).getBook(id)).withSelfRel());
-		resource.add(linkTo(methodOn(BookController.class).getBookCategory(book.getBookCategory().getId())).withRel("book category"));
+		resource.add(linkTo(methodOn(BookController.class).getBookCategory(book.getBookCategory().getId())).withRel("BookCategory"));
 		return resource;
 	}
 	
 	@GetMapping(value = "/bookCategories", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	@ApiOperation(value = "List book category for given {id}")
+	@ApiOperation(value = "List all book categories")
 	public Collection<Resource<BookCategory>> getAllBookCategory() {
 		List<BookCategory> bookCategories = bookCategoryRepository.findAll();
 		List<Resource<BookCategory>> resources = new ArrayList<Resource<BookCategory>>();
 		bookCategories.forEach(bookCategory->{
 			resources.add(getBookCategoryResource(bookCategory));
 		});
-		
+		return resources;
+	}
+	
+	@GetMapping(value = "/books", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	@ApiOperation(value = "List all books")
+	public Collection<Resource<Book>> getAllBooks() {
+		List<Book> books = bookRepository.findAll();
+		List<Resource<Book>> resources = new ArrayList<Resource<Book>>();
+		books.forEach(book->{
+			resources.add(getBookResource(book));
+		});
 		return resources;
 	}
 
 	private Resource<BookCategory> getBookCategoryResource(BookCategory bookCategory) {
-		
 		Resource<BookCategory> resource = new Resource<BookCategory>(bookCategory);
 		resource.add(linkTo(methodOn(BookController.class).getBookCategory(bookCategory.getId())).withSelfRel());
 		return resource;
 	}
 	
-
+	private Resource<Book> getBookResource(Book book) {
+		Resource<Book> resource = new Resource<Book>(book);
+		resource.add(linkTo(methodOn(BookController.class).getBook(book.getId())).withSelfRel());
+		resource.add(linkTo(methodOn(BookController.class).getBookCategory(book.getBookCategory().getId())).withRel("BookCategory"));
+		return resource;
+	}
 }
