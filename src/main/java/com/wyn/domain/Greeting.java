@@ -1,11 +1,13 @@
 package com.wyn.domain;
 
+import java.io.Serializable;
+
 import org.springframework.hateoas.ResourceSupport;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Greeting extends ResourceSupport {
+public class Greeting extends ResourceSupport implements Serializable{
 
 	private final String content;
 

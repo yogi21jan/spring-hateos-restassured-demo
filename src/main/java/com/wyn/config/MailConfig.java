@@ -1,4 +1,4 @@
-package com.wyn.domain;
+package com.wyn.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

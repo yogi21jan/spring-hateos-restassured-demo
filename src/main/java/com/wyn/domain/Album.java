@@ -1,10 +1,12 @@
 package com.wyn.domain;
 
+import java.io.Serializable;
+
 /**
  * Album (available to purchase - hence 'stockLevel' attribute).
  *
  */
-public class Album {
+public class Album implements Serializable{
 	
 	private final String albumId;
 	private final String title;

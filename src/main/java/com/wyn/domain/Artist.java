@@ -1,10 +1,12 @@
 package com.wyn.domain;
 
+import java.io.Serializable;
+
 /**
  * Music Artist/Group.
  *
  */
-public class Artist{
+public class Artist implements Serializable{
 	
 	private final String artistId;
 	private final String name;

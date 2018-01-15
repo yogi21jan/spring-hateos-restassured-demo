@@ -45,7 +45,7 @@ public class MusicService {
 	public Collection<Album> getAllAlbums() {
 		return albums.values();
 	}
-
+	
 	public Album getAlbum(final String id) {
 		return albums.get(id);
 	}
